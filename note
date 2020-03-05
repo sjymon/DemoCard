@@ -4,3 +4,10 @@ https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-hos
 "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult." - C.A.R. Hoare
 https://lonewolfonline.net/saving-user-preferences-settings-application/
 using Microsoft.Practices.EnterpriseLibrary.Data;
+=========================
+DataContracts
+MessageContracts
+FaultContracts
+ServiceContracts
+ServiceImplementation
+ServiceHost
