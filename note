@@ -3,14 +3,7 @@ http://www.wcftutorial.net/How_to_create_RESTful_Service.aspx
 https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service
 "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult." - C.A.R. Hoare
 https://lonewolfonline.net/saving-user-preferences-settings-application/
-using Microsoft.Practices.EnterpriseLibrary.Data;
 =========================
-DataContracts
-MessageContracts
-FaultContracts
-ServiceContracts
-ServiceImplementation
-ServiceHost
 https://www.dammio.com/2017/03/22/entity-framework-phan-4-tao-co-so-du-lieu-truoc-database-first
 https://weblog.west-wind.com/posts/2015/Apr/29/Adding-minimal-OWIN-Identity-Authentication-to-an-Existing-ASPNET-MVC-Application
 https://www.jasonsamuel.com/2014/01/13/publishing-ie-via-citrix-in-full-screen-kiosk-like-mode-and-retaining-the-x-button-to-close/
