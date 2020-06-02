@@ -1,0 +1,69 @@
+// Fix bugs sort Tree
+const getObjectValue = (obj, des) => {
+    return eval('obj.' + des);
+};
+
+const toTreeData = (data, minPid = 0, IDString = 'ID', pidString = 'pid', childrenString = 'children', sort = 'sort') => {
+    let pos = {};
+    let tree = [];
+    let n = 0;
+
+    if (minPid === 'null') {
+        minPid = null;
+    }
+
+    while (data.length !== 0) {
+        if (getObjectValue(data[n], pidString) == minPid) {
+            data[n][childrenString] = [];
+            tree.push(data[n]);
+            pos[getObjectValue(data[n], IDString)] = [tree.length - 1];
+            data.splice(n, 1);
+            n--;
+        } else {
+            let posArray = pos[getObjectValue(data[n], pidString)];
+
+            if (posArray !== undefined) {
+                let obj = tree[posArray[0]];
+
+                for (let j = 1; j < posArray.length; j++) {
+                    obj = obj[childrenString][posArray[j]];
+                }
+
+                data[n][childrenString] = [];
+                obj[childrenString].push(data[n]);
+                pos[getObjectValue(data[n], IDString)] = posArray.concat([obj[childrenString].length - 1]);
+                data.splice(n, 1);
+                n--;
+            }
+        }
+
+        n++;
+
+        if (n > data.length - 1) {
+            n = 0;
+        }
+    }
+
+    const toSort = tree => {
+        tree.sort((a, b) => {
+            return a[sort] - b[sort];
+        });
+    };
+
+    const ergodicTree = tree => {
+        for (const n in tree) {
+            if (tree[n][childrenString] && tree[n][childrenString].length) {
+                toSort(tree[n][childrenString]);
+                ergodicTree(tree[n][childrenString]);
+            }
+        }
+    };
+
+    toSort(tree);
+    ergodicTree(tree);
+    return tree;
+};
+
+
+// var girdData = toTreeData(list, 'null', 'id', 'parent', 'children');
+// console.log(girdData);
