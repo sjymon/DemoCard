@@ -29,3 +29,20 @@ https://bl.ocks.org/swayvil/b86f8d4941bdfcbfff8f69619cd2f460
 http://bl.ocks.org/robschmuecker/7880033
 https://github.com/vakata/jstree
 ===
+"use strict";
+
+let compareById = vector => {
+    return (a, b) => {
+        const aid = Number(a.get('id'));
+        const bid = Number(b.get('id'));
+
+        if (aid > bid) {
+            return vector ? 1 : -1;
+        } else if (aid < bid) {
+            return vector ? -1 : 1;
+        } else {
+            return 0;
+        }
+    };
+};
+
