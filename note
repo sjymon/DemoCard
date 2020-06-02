@@ -81,3 +81,16 @@ let searchNode = (tree, node, criteria, options) => {
     }
 };
 
+let showTree = (tree, node = null, level = 1) => {
+    node = node || tree[0];
+
+    if (node && node.content) {
+        console.log(new Array(level).join('\t'), node.content);
+    }
+
+    if (node && node.children) {
+        node.children.forEach(item => {
+            showTree(tree, item, level + 1);
+        });
+    }
+};
