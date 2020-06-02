@@ -88,3 +88,12 @@ class Tree {
     }
 
 }
+
+const defaultOptions = {
+    key_id: 'id',
+    key_parent: 'parent',
+    key_child: 'child',
+    key_last: null,
+    uuid: false,
+    empty_children: false
+}
